@@ -4,6 +4,7 @@ LABEL description="BackupOps is your backup enabled toolbox Linux image."
 
 EXPOSE 22
 ARG DEBIAN_FRONTEND=noninteractive
+ENV TERM=xterm-256color
 
 RUN apt-get -y update && apt-get -y install --no-install-recommends \
     busybox-static \
@@ -36,4 +37,4 @@ RUN curl https://github.com/borgbackup/borg/releases/latest/download/borg-linux6
 RUN /bin/busybox --install
 
 COPY ./entrypoint.sh /
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

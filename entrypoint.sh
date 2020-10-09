@@ -69,4 +69,6 @@ fi
 
 if [ ! -z "${BOPS_KEEP_RUNNING}" ]; then
 	tail -f /dev/null
+else
+	exec "$@"
 fi

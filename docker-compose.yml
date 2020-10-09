@@ -2,18 +2,29 @@ version: '3.7'
 
 services:
   bkops:
-    image: backupops:latest
+    image: ethraza/backupops:latest
     build:
       context: /var/apps/backupops/docker/backupops
       dockerfile: Dockerfile
     container_name: backup-ops
     hostname: bkops.{{.Node.Hostname}}
+    environment:
+      BOPS_SSH: "on"
+      # BOPS_SSH_OPT: "-e -D"
+      # BOPS_KEEP_RUNNING: "on"
+      BORG_REPO: "/backup/repo"
+      BORG_BASE_DIR: "/backup"
+      BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: "yes"
+      BORG_RELOCATED_REPO_ACCESS_IS_OK: "yes"
+
     deploy:
       mode: replicated
       replicas: 1
+      restart_policy:
+        condition: none
       placement:
-        constraints:
-          - "node.labels.storage == 1"
+        # constraints:
+        #   - "node.labels.storage == 1"
         preferences:
           - spread: node.labels.storage
       labels:
@@ -24,15 +35,13 @@ services:
       - target: 22
         protocol: tcp
         mode: ingress
-    environment:
-      BOPS_SSH: "on"
-      # BOPS_SSH_OPT: "-e -D"
-      # BOPS_KEEP_RUNNING: "on"
     extra_hosts:
       - "mysql01.localdomain:192.168.0.192"
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /mnt/storage/backup:/backup
+      - /tmp:/tmp
     networks:
       - default
 
