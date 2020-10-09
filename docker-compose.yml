@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  bkops:
+    image: backupops:latest
+    build:
+      context: /var/apps/backupops/docker/backupops
+      dockerfile: Dockerfile
+    container_name: backup-ops
+    hostname: bkops.{{.Node.Hostname}}
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - "node.labels.storage == 1"
+        preferences:
+          - spread: node.labels.storage
+      labels:
+        - "swarm.cronjob.enable=false"
+        - "swarm.cronjob.schedule=10 1 * * *"
+        - "swarm.cronjob.skip-running=true"
+    ports:
+      - target: 22
+        protocol: tcp
+        mode: ingress
+    environment:
+      BOPS_SSH: "on"
+      # BOPS_KEEP_RUNNING: "on"
+    extra_hosts:
+      - "mysql01.localdomain:192.168.0.192"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/apps/backupops/docker/backupops/home/sailor:/home/sailor
+      - /mnt/storage:/mnt/storage
+    networks:
+      - default
+
+
+networks:
+  default:
+    external: true
