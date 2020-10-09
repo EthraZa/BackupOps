@@ -26,14 +26,13 @@ services:
         mode: ingress
     environment:
       BOPS_SSH: "on"
+      # BOPS_SSH_OPT: "-e -D"
       # BOPS_KEEP_RUNNING: "on"
     extra_hosts:
       - "mysql01.localdomain:192.168.0.192"
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /var/apps/backupops/docker/backupops/home/sailor:/home/sailor
-      - /mnt/storage:/mnt/storage
     networks:
       - default
 
