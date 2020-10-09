@@ -4,7 +4,6 @@ services:
   bkops:
     image: ethraza/backupops:latest
     build:
-      context: /var/apps/backupops/docker/backupops
       dockerfile: Dockerfile
     container_name: backup-ops
     hostname: bkops.{{.Node.Hostname}}
