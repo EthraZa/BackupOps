@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: backup-ops
     hostname: bkops.{{.Node.Hostname}}
+    # command: ["borg", "init", "--encryption", "none"]
     environment:
       BOPS_SSH: "on"
       # BOPS_SSH_OPT: "-e -D"
