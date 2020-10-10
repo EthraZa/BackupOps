@@ -40,6 +40,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /mnt/storage/backup/script:/docker-entrypoint.d
       - /mnt/storage/backup:/backup
       - /tmp:/tmp
     networks:
