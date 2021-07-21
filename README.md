@@ -6,18 +6,18 @@ Docker Hub: https://hub.docker.com/r/ethraza/backupops
 
 ---
 # Backup tools included
-* [Backupninja] (https://0xacab.org/liberate/backupninja) - Lightweight, extensible meta-backup system
+* [Backupninja](https://0xacab.org/liberate/backupninja) - Lightweight, extensible meta-backup system
 * [Borg](https://www.borgbackup.org/) - Deduplicating archiver with compression and encryption
 * [Croc](https://github.com/schollz/croc) - Easily and securely send things from one computer to another
-* [Duplicity] (http://duplicity.nongnu.org/) - Encrypted bandwidth-efficient backup using the rsync algorithm
-* [Kopia] (https://kopia.io/) - Encrypted, Deduplicated, and Compressed Data Backups Using Your Own Cloud Storage
+* [Duplicity](http://duplicity.nongnu.org/) - Encrypted bandwidth-efficient backup using the rsync algorithm
+* [Kopia](https://kopia.io/) - Encrypted, Deduplicated, and Compressed Data Backups Using Your Own Cloud Storage
 * [Ncat](https://nmap.org/ncat/) - Feature-packed networking utility which reads and writes data across networks
 * [Rclone](https://rclone.org/) - Syncs your files to cloud storage
-* [Rdiff-backup] (https://rdiff-backup.net/) - Reverse differential backup tool, over a network or locally
-* [Restic] (https://restic.net/) - A modern backup program that can back up your files
-* [Rsnapshot] (https://rsnapshot.org/) - A filesystem snapshot utility based on rsync
+* [Rdiff-backup](https://rdiff-backup.net/) - Reverse differential backup tool, over a network or locally
+* [Restic](https://restic.net/) - A modern backup program that can back up your files
+* [Rsnapshot](https://rsnapshot.org/) - A filesystem snapshot utility based on rsync
 * [Rsync](https://rsync.samba.org/) - Utility that provides fast incremental file transfer
-* [S5cmd] (https://github.com/peak/s5cmd) - Parallel S3 and local filesystem execution tool
+* [S5cmd](https://github.com/peak/s5cmd) - Parallel S3 and local filesystem execution tool
 * [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) - File-synchronization tool for OSX, Unix, and Windows
 
 
