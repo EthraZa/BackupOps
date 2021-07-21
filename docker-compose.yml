@@ -1,9 +1,10 @@
-version: '3.7'
+version: '3.8'
 
 services:
   bkops:
     image: ethraza/backupops:latest
     build:
+      context: .
       dockerfile: Dockerfile
     container_name: backup-ops
     hostname: bkops.{{.Node.Hostname}}
@@ -35,13 +36,14 @@ services:
       - target: 22
         protocol: tcp
         mode: ingress
-    extra_hosts:
-      - "mysql01.localdomain:192.168.0.192"
+    # extra_hosts:
+    #   - "mysql01.localdomain:192.168.0.192"
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /mnt/storage/backup/script:/docker-entrypoint.d
       - /mnt/storage/backup:/backup
+      - /:/host
       - /tmp:/tmp
     networks:
       - default
