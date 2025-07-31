@@ -1,0 +1,5 @@
+alias ls='ls --color=auto'
+alias l='ls -CF'
+alias ll='eza -halF'
+alias lll='eza -l'
+alias rm='rm -i'
