@@ -11,7 +11,7 @@ Docker Hub: https://hub.docker.com/r/ethraza/backupops
 * [Croc](https://github.com/schollz/croc) - Easily and securely send things from one computer to another
 * [Duplicity](http://duplicity.nongnu.org/) - Encrypted bandwidth-efficient backup using the rsync algorithm
 * [Kopia](https://kopia.io/) - Encrypted, Deduplicated, and Compressed Data Backups Using Your Own Cloud Storage
-* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) - Formerly mariabackup, it's a tool provided by MariaDB for performing physical online backups of InnoDB, Aria and MyISAM tables. It was originally forked from Percona XtraBackup 2.3.8
+* [Mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) - Formerly mariabackup, it's a tool provided by MariaDB for performing physical online backups of InnoDB, Aria and MyISAM tables. It was originally forked from Percona XtraBackup 2.3.8
 * [Ncat](https://nmap.org/ncat/) - Feature-packed networking utility which reads and writes data across networks
 * [Rclone](https://rclone.org/) - Syncs your files to cloud storage
 * [Rdiff-backup](https://rdiff-backup.net/) - Reverse differential backup tool, over a network or locally
