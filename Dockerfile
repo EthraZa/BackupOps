@@ -15,8 +15,10 @@ RUN apt -y update && apt -y install --no-install-recommends \
     fuse \
     gnupg \
     ncat \
+    mariadb-backup \
     openssh-server \
     p7zip \
+    pigz \
     rdiff-backup \
     restic \
     rsnapshot \
@@ -44,7 +46,7 @@ RUN curl -s https://kopia.io/signing-key | apt-key add - && \
     apt -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl https://github.com/peak/s5cmd/releases/latest/download/s5cmd_1.3.0_Linux-64bit.tar.gz -L | tar -C /usr/bin/ -xzf - s5cmd
+RUN curl https://github.com/peak/s5cmd/releases/latest/download/s5cmd_2.3.0_Linux-64bit.tar.gz -L | tar -C /usr/bin/ -xzf - s5cmd
 
 RUN /bin/busybox --install
 
