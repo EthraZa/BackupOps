@@ -12,6 +12,6 @@ if [ -z "$2" ]; then
 fi
 
 docker login
-docker build . --pull --compress -t ethraza/backops:$1 -t ethraza/backops:latest
-docker push ethraza/backops:$1
-docker push ethraza/backops:latest
+docker build . --pull --compress -t $1:$2 -t $1:latest
+docker push $1:$2
+docker push $1:latest
